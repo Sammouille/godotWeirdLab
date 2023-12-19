@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://borph8mgue1m7"]
+
+[ext_resource type="Texture2D" uid="uid://cm0yk1wnn2pip" path="res://73959_1667235219_432fa597183a560d430922b5b2777789.png" id="1_i5w36"]
+[ext_resource type="Script" path="res://bouger_gosse.gd" id="1_lqyap"]
+[ext_resource type="PackedScene" uid="uid://bkltr8hgmiys8" path="res://pitch_volume_randomizer.tscn" id="3_2717b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4776q"]
+radius = 44.0
+height = 190.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kla0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i5w36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="characterRenaud" type="CharacterBody2D" node_paths=PackedStringArray("renaudChant")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_lqyap")
+renaudChant = NodePath("pitchVolumeRandomizer")
+
+[node name="collisionRenaud" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4776q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kla0u")
+
+[node name="spriteRenaud" type="Sprite2D" parent="."]
+texture = ExtResource("1_i5w36")
+
+[node name="pitchVolumeRandomizer" parent="." instance=ExtResource("3_2717b")]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwkq856e7a3sf"]
+
+[ext_resource type="PackedScene" uid="uid://borph8mgue1m7" path="res://character_renaud.tscn" id="1_gdvo0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="characterRenaud" parent="." instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 1008)
+
+[node name="characterFrancis" parent="." node_paths=PackedStringArray("renaudChant") instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 816)
+renaudChant = NodePath("../characterRenaud/pitchVolumeRandomizer")
+
+[node name="characterMoeva" parent="." node_paths=PackedStringArray("renaudChant") instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 608)
+renaudChant = NodePath("../characterRenaud/pitchVolumeRandomizer")
+
+[node name="characterNono" parent="." node_paths=PackedStringArray("renaudChant") instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 416)
+renaudChant = NodePath("../characterRenaud/pitchVolumeRandomizer")
+
+[node name="characterThibaut" parent="." node_paths=PackedStringArray("renaudChant") instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 256)
+renaudChant = NodePath("../characterRenaud/pitchVolumeRandomizer")
+
+[node name="characterSam" parent="." node_paths=PackedStringArray("renaudChant") instance=ExtResource("1_gdvo0")]
+position = Vector2(56, 80)
+renaudChant = NodePath("../characterRenaud/pitchVolumeRandomizer")
